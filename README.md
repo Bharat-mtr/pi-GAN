@@ -7,6 +7,8 @@
 [Gordon Wetzstein](https://stanford.edu/~gordonwz/)<br>
 \*denotes equal contribution
 
+[DAGsHub Repository](https://dagshub.com/Bharat-mtr/pi-GAN)
+
 This is the official implementation of the paper "π-GAN: Periodic Implicit Generative Adversarial Networks for 3D-Aware Image Synthesis".
 
 π-GAN is a novel generative model for high-quality 3D aware image synthesis.
@@ -15,7 +17,7 @@ https://user-images.githubusercontent.com/9628319/122865841-e2d1c080-d2db-11eb-9
 
 ## Training a Model
 
-The main training script can be found in train.py. Majority of hyperparameters for training and evaluation are set in the curriculums.py file. (see file for more details) We provide recommended curriculums for CelebA, Cats, and CARLA.
+The main training script can be found in train.py. Majority of hyperparameters for training and evaluation are set in the curriculums.py file. (see file for more details) We provide recommended curriculums for CelebA ([DAGsHub Link](https://dagshub.com/Bharat-mtr/pi-GAN/src/master/data_file)).
 
 ##### Relevant Flags:
 
@@ -71,13 +73,11 @@ You can pass the flag `--lock_view_dependence` to remove view dependent effects.
 `python extract_shapes.py path/to/generator.pth --curriculum CelebA --seed 0`
 
 ## Pretrained Models
-We provide pretrained models for CelebA, Cats, and CARLA.
+We provide pretrained models for CelebA.
 
-CelebA: https://drive.google.com/file/d/1bRB4-KxQplJryJvqyEa8Ixkf_BVm4Nn6/view?usp=sharing
+CelebA: https://dagshub.com/Bharat-mtr/pi-GAN/src/master/model_weight
 
-Cats: https://drive.google.com/file/d/1WBA-WI8DA7FqXn7__0TdBO0eO08C_EhG/view?usp=sharing
-
-CARLA: https://drive.google.com/file/d/1n4eXijbSD48oJVAbAV4hgdcTbT3Yv4xO/view?usp=sharing
+ 
 
 All zipped model files contain a generator.pth, ema.pth, and ema2.pth files. ema.pth used a decay of 0.999 and ema2.pth used a decay of 0.9999. All evaluation scripts will by default load the EMA from the file named `ema.pth` in the same directory as the generator.pth file.
 
